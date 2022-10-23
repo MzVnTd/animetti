@@ -2,11 +2,11 @@ import React from 'react';
 
 const Heading = ({ 
     className,
+    size,
     text,
-    size
 }) => { return <p
-                size={size}
                 class={className}
+                style={{fontSize:size}}
                 >
                 {text}
                 </p> 

@@ -12,5 +12,5 @@ export const heading = Template.bind({});
 
 heading.args = {
     text:'BLABLABLA',
-    size:'title-sm'
+    size:'sm'
 }
