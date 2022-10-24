@@ -5,7 +5,7 @@ const Heading = ({
     size,
     text,
 }) => { return <p
-                class={className}
+                className={className}
                 style={{fontSize:size}}
                 >
                 {text}
