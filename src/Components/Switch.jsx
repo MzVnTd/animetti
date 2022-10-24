@@ -1,9 +1,12 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Switch = (
-    checked = false,
+const Switch = ({
+
+	checked = false,
     disabled = false,
+}
+    
 ) => { 
 
 	return (
