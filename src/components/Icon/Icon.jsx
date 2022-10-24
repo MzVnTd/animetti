@@ -1,12 +1,15 @@
 import React from 'react';
-import '../vincent.css'
 
-const Icon = ({svg}) =>{
+const Icon = ({ href, role, className, dataMdbRippleColor, iclass }) => {
 
     return (
-        <svg class="svg-icon" viewBox="0 0 20 20">
-			<path d={svg}></path>
-		</svg>
-        ) 
+        <a
+            className={className}
+            href={href}
+            role={role}
+            data-mdb-ripple-color={dataMdbRippleColor}
+        ><i iclass={iclass}></i>
+        </a>
+    )
 }
 export default Icon;

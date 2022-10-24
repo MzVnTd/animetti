@@ -1,5 +1,4 @@
 import React from 'react';
-import '../vincent.css'
 
 const Link = ({text, url}) =>{
 

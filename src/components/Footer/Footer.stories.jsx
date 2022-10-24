@@ -10,6 +10,7 @@ const Template = (args) => <Footer {...args} />
 export const Default = Template.bind({})
 
 Default.args = {
-    name:'Nom du composant'
+    className:'text-center text-white',
+    background:'#f1f1f1'
 }
 
