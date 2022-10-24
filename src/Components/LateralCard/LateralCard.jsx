@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import CardTitle from "../CardTitle/CardTitle";
 import CardItem from "../CardItem/CardItem";
+import Button from "../Button/Button";
 
 const LateralCard = ({
 	imageUrl,
@@ -21,6 +22,7 @@ const LateralCard = ({
 							<CardTitle title={title}/>
 							<CardItem item="Ranking" value={'#' + rank}/>
 							<CardItem item="Ratings" value={ratings} small={true}/>
+							<Button link="" text="Read more..."/>
 						</div>
 					</div>
 				</div>
