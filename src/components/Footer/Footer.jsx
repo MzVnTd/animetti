@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from './../Link/Link'
 import Icon from '../Icon/Icon';
+import Text from '../Text/Text';
 import "bootstrap/dist/css/bootstrap.css";
 
 const Footer = ({className, background}) =>{
@@ -19,6 +20,10 @@ const Footer = ({className, background}) =>{
           iclass="fab fa-facebook-f"
           ></Icon>
 
+        </div>
+
+        <div className="text-center text-dark p-3">
+          <Text text="Vincent Merwane Teya"></Text>
         </div>
        
       </footer>
