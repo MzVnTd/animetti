@@ -8,7 +8,7 @@ const Link = ({
 }) =>{
 
     return (
-        <a class = {className}
+        <a className = {className}
         href = {link}>
             {text}
         </a>
