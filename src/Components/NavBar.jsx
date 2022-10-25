@@ -1,7 +1,7 @@
 import React from 'react';
-import Heading from './Heading';
-import Link from './Link';
-import Switch from './Switch';
+import Heading from './Heading/Heading';
+import Link from './Link/Link';
+import Switch from './Switch/Switch';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Navbar = () => {
