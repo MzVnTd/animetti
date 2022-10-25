@@ -22,6 +22,7 @@ const PreviewCard = ({
 					src={imageUrl}
 					className="card-img-bottom"
 					style={{ objectFit: "cover", height: small ? "20rem" : "40rem" }}
+					alt=""
 				/>
 			</div>
 		</>
