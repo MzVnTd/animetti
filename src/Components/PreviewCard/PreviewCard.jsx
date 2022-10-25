@@ -12,7 +12,7 @@ const PreviewCard = ({
 	return (
 		<>
 			<div
-				className="card"
+				className="card align-items-center"
 				style={{ width: small ? "18rem" : "36rem" }}
 			>
 				<div
@@ -26,8 +26,8 @@ const PreviewCard = ({
 					style={{ objectFit: "cover", height: small ? "20rem" : "40rem" }}
 					alt=""
 				/>
-				<div className="d-grid align-items-center mx-auto mt-4 mb-4">
-					<Button text={'WATCH NOW'} link={link}></Button>
+				<div className="d-grid gap-2 mt-4 mb-4">
+					<Button text={'WATCH TRAILER NOW'} link={link}></Button>
 				</div>
 			</div>
 		</>

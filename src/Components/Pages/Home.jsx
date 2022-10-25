@@ -25,7 +25,7 @@ const Home = () => {
       
       animeRecs.forEach(anime => {
         return(
-            cardArray.push(<PreviewCard title={anime.title} imageUrl={anime.images.jpg.image_url} small={true} link={anime.url}></PreviewCard>)
+            cardArray.push(<PreviewCard title={anime.title} imageUrl={anime.images.jpg.image_url} small={true} link={anime.trailer.url}></PreviewCard>)
         )
     }
     );
@@ -35,10 +35,13 @@ const Home = () => {
   return (
   <div>
   <Navbar/>
-  <div className="container mt-4 align-items-center">
+  <div className='container d-flex align-items-center min-vh-100'>
+  <div className="container align-items-center">
   <TopAnimes cards={cardArray}></TopAnimes>      
   </div> 
   </div>
+  </div>
+  
   )
 }
 
