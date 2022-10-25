@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar fixed-top navbar-expand-lg bg-light">
+    <nav className="navbar navbar-expand-lg bg-light">
     <div className="container-fluid">
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div className="navbar-nav">
