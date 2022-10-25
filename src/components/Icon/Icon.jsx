@@ -1,15 +1,14 @@
 import React from 'react';
 
-const Icon = ({ href, role, className, dataMdbRippleColor, iclass }) => {
+const Icon = ({xmlns, width, height, fill, className, viewBox, d}) => {
 
     return (
-        <a
-            className={className}
-            href={href}
-            role={role}
-            data-mdb-ripple-color={dataMdbRippleColor}
-        ><i iclass={iclass}></i>
-        </a>
+        <svg xmlns={xmlns} width={width} height={height} fill={fill}
+        className={className} viewBox={viewBox}>
+            <path 
+                d={d}>
+            </path>
+        </svg>
     )
 }
 export default Icon;

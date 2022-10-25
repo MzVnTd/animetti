@@ -10,12 +10,11 @@ const Template = (args) => <Icon {...args} />
 export const Icon = Template.bind({})
 
 Default.args = {
+    svg:"",
+    width:"",
+    height:"",
+    fill:"",
     className:"",
-    href:"",
-    role:"",
-    iclass:"",
-    dataMdbRippleColor:""
+    viewBox:"",
+    d:""
 }
-
-
-
