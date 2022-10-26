@@ -12,5 +12,6 @@ export const heading = Template.bind({});
 
 heading.args = {
     text:'BLABLABLA',
+    className:'font-weight-bold',
     size:'sm'
 }
