@@ -1,13 +1,13 @@
-import Link from './Link';
+import Text from './Text';
 
 export default {
-    component: Link,
+    component: Text,
     title: 'components/Text'
 }
 
 const Template = (args) => <Text {...args} />
 
-export const Text = Template.bind({})
+export const Default = Template.bind({})
 
 Default.args = {
     text:''

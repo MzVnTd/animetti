@@ -7,7 +7,7 @@ export default {
 
 const Template = (args) => <Link {...args} />
 
-export const Link = Template.bind({})
+export const Default = Template.bind({})
 
 Default.args = {
     text:'',

@@ -7,7 +7,7 @@ export default {
 
 const Template = (args) => <Icon {...args} />
 
-export const Icon = Template.bind({})
+export const Default = Template.bind({})
 
 Default.args = {
     svg:"",
