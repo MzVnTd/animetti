@@ -4,6 +4,7 @@ import Navbar from "../NavBar";
 import TopAnimes from "../TopAnimes/TopAnimes";
 import PreviewCard from "../PreviewCard/PreviewCard";
 import { useEffect, useState } from 'react';
+import Title from '../Title/Title';
 
 
 const Home = () => {
@@ -25,7 +26,7 @@ const Home = () => {
       
       animeRecs.forEach(anime => {
         return(
-            cardArray.push(<PreviewCard title={anime.title} imageUrl={anime.images.jpg.image_url} small={true} link={anime.trailer.url}></PreviewCard>)
+            cardArray.push(<PreviewCard title={anime.title} imageUrl={anime.images.jpg.large_image_url} small={true} link={anime.trailer.url}></PreviewCard>)
         )
     }
     );
@@ -35,7 +36,10 @@ const Home = () => {
   return (
   <div>
   <Navbar/>
-  <div className='container d-flex align-items-center min-vh-100'>
+  <div className="mt-5">
+    <Title text={"TOP CURRENT ANIMES"} className={'text-uppercase text-center'}></Title>
+  </div>
+  <div className='container align-items-center mt-5'>
   <div className="container align-items-center">
   <TopAnimes cards={cardArray}></TopAnimes>      
   </div> 
