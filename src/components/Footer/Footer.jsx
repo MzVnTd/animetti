@@ -1,22 +1,38 @@
 import React from 'react';
 import Link from './../Link/Link'
-import '../vincent.css'
 import Icon from '../Icon/Icon';
+import Text from '../Text/Text';
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle"
 
-const Footer = ({}) =>{
+const Footer = ({ className, background }) => {
 
-    return (
-    <footer>
-        <div className='footer'>
-            <Link url="https://github.com/MzVnTd/animetti" text="Lien du GIT"></Link>
-            
-            <Icon svg="M17.218,2.268L2.477,8.388C2.13,8.535,2.164,9.05,2.542,9.134L9.
-            33,10.67l1.535,6.787c0.083,0.377,0.602,0.415,0.745,0.065l6.123-14.74C17.866,
-            2.46,17.539,2.134,17.218,2.268 M3.92,8.641l11.772-4.89L9.535,9.909L3.92,8.641z 
-            M11.358,16.078l-1.268-5.613l6.157-6.157L11.358,16.078z"></Icon>
-            
-        </div>
-    </footer>)
+  return (
+    <footer className={className} style={{ backgroundColor: background }}>
+
+      <div className="text-center text-dark p-3">
+        <Link url="https://github.com/MzVnTd/animetti" text="Lien vers notre GIT"></Link>
+
+      </div>
+
+      <div className="text-center text-dark p-3">
+        <Icon
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-github"
+          viewBox="0 0 16 16"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+        </Icon>
+      </div>
+
+      <div className="text-center text-dark p-3">
+        <Text text="Vincent Merwane Teya"></Text>
+      </div>
+
+    </footer>
+  )
 }
 
 export default Footer;

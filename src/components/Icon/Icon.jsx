@@ -1,12 +1,14 @@
 import React from 'react';
-import '../vincent.css'
 
-const Icon = ({svg}) =>{
+const Icon = ({xmlns, width, height, fill, className, viewBox, d}) => {
 
     return (
-        <svg class="svg-icon" viewBox="0 0 20 20">
-			<path d={svg}></path>
-		</svg>
-        ) 
+        <svg xmlns={xmlns} width={width} height={height} fill={fill}
+        className={className} viewBox={viewBox}>
+            <path
+                d={d}>
+            </path>
+        </svg>
+    )
 }
 export default Icon;

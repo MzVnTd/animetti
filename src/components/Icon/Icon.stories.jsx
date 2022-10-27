@@ -2,16 +2,19 @@ import Icon from './Icon';
 
 export default {
     component: Icon,
-    title: 'components/Icon'
+    title: 'component/Icon'
 }
 
 const Template = (args) => <Icon {...args} />
 
-export const Icon = Template.bind({})
+export const Default = Template.bind({})
 
 Default.args = {
-    svg:''
+    svg:"",
+    width:"",
+    height:"",
+    fill:"",
+    className:"",
+    viewBox:"",
+    d:""
 }
-
-
-
