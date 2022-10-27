@@ -9,7 +9,6 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
     <div className="container-fluid">
-    
       <div className="navbar-nav">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
       <li className="nav-item">
