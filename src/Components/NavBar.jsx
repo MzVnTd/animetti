@@ -3,6 +3,7 @@ import Heading from './Heading/Heading';
 import Link from './Link/Link';
 import Switch from './Switch/Switch';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link as ReactLink} from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -14,10 +15,14 @@ const Navbar = () => {
       <Heading className={"navbar-brand mb-0 h1"} text='Animetti' size={"title-bg"}></Heading>
       </li>
         <li className="nav-item">
-        <Link className={"nav-link"} text='Home' link={'/'}></Link>
+        <ReactLink to={'/'}>        
+            <Link className={"nav-link"} text='Home'></Link>
+        </ReactLink>
         </li>
         <li className="nav-item">
-        <Link className={"nav-link"} text='Ranking' link={'/ranking'}></Link>
+          <ReactLink to={'/ranking'}>        
+            <Link className={"nav-link"} text='Ranking'></Link>
+          </ReactLink>
         </li>
       </ul>
         <span className="navbar-text">
