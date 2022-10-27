@@ -30,13 +30,6 @@ const AnimeDetail = ({
 						<DetailElement index="Episodes" value={details.episodes} />
 						<DetailElement index="Status" value={details.status} />
 					</div>
-					{
-						!details.trailer === undefined
-							? <iframe width="560" height="315"
-								src={details.trailer.embed_url} frameBorder="0" title={details.title}
-								allowFullscreen />
-							: <></>
-					}
 				</div>
 			</div>
 		</div>
