@@ -6,7 +6,7 @@ import AnimeDetail from "../AnimeDetail/AnimeDetail";
 const Detail = () => {
 	const {id} = useParams();
 
-	const [animeDetail, setAnimeDetail] = useState([]);
+	const [animeDetail, setAnimeDetail] = useState(null);
 
 	useEffect(() => {
 		getAnimeDetail(id)
@@ -17,7 +17,6 @@ const Detail = () => {
 		const response = await fetch(`https://api.jikan.moe/v4/anime/`+id+`/full`);
         const animeDetail = await response.json();
         setAnimeDetail(animeDetail.data);
-        console.log(animeDetail.data);
 	}
 
 	return (

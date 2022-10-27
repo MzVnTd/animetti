@@ -5,6 +5,9 @@ import DetailElement from "../DetailElement/DetailElement";
 const AnimeDetail = ({
 	details
 }) => {
+	if (details === null) {
+		return <h1 className="display-5">Loading...</h1>;
+	}
 	return (
 		<div className="card">
 			<div className="row g-0">
@@ -29,6 +32,7 @@ const AnimeDetail = ({
 						<DetailElement index="Source" value={details.source} />
 						<DetailElement index="Episodes" value={details.episodes} />
 						<DetailElement index="Status" value={details.status} />
+						<iframe height="400vh" title={details.title} src={details.trailer.embed_url} frameBorder="0" allowFullScreen />
 					</div>
 				</div>
 			</div>
