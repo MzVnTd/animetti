@@ -8,6 +8,7 @@ import {
 
 import Home from "./Components/Pages/Home";
 import Ranking from "./Components/Pages/Ranking";
+import Random from "./Components/Pages/Random";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/ranking",
     element: <Ranking />,
+  },
+  {
+    path: "/random",
+    element: <Random />,
   },
 ]);
 
