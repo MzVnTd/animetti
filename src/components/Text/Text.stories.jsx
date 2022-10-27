@@ -2,7 +2,7 @@ import Text from './Text';
 
 export default {
     component: Text,
-    title: 'components/Text'
+    title: 'component/Text'
 }
 
 const Template = (args) => <Text {...args} />

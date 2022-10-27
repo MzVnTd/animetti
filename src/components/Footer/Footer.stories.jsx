@@ -2,7 +2,7 @@ import Footer from './Footer';
 
 export default {
     component: Footer,
-    title: 'components/Footer'
+    title: 'component/Footer'
 }
 
 const Template = (args) => <Footer {...args} />

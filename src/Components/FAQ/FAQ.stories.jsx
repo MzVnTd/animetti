@@ -4,7 +4,7 @@ import FAQ from "./FAQ";
 
 export default {
 	component: FAQ,
-	title: "components/FAQ",
+	title: "component/FAQ",
 };
 
 const Template = (args) => <FAQ {...args} />;

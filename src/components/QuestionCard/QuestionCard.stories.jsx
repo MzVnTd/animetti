@@ -2,7 +2,7 @@ import QuestionCard from './QuestionCard';
 
 export default {
     component: QuestionCard,
-    title: 'components/QuestionCard'
+    title: 'component/QuestionCard'
 }
 
 const Template = (args) => <QuestionCard {...args} />

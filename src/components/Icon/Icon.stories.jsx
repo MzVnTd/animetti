@@ -2,7 +2,7 @@ import Icon from './Icon';
 
 export default {
     component: Icon,
-    title: 'components/Icon'
+    title: 'component/Icon'
 }
 
 const Template = (args) => <Icon {...args} />
