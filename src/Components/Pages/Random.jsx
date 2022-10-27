@@ -5,6 +5,7 @@ import Navbar from "../NavBar";
 import Title from "../Title/Title";
 import Button from "../Button/Button";
 import FullWidthCard from "../FullWidthCard/FullWidthCard";
+import Footer from "../Footer/Footer";
 
 const Random = () => {
   const [randAnime, setRandAnime] = useState([]);
@@ -44,6 +45,9 @@ const Random = () => {
               }
             />
           </div>
+          <div>
+        <Footer className='text-center text-white mt-5' background='#f1f1f1'></Footer>
+        </div>
         </div>
   );
 };

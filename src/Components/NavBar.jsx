@@ -29,6 +29,11 @@ const Navbar = () => {
             <Link className={"nav-link"} text='RandomGenerator'></Link>
           </ReactLink>
         </li>
+        <li className="nav-item">
+          <ReactLink to={'/faq'}>        
+            <Link className={"nav-link"} text='FAQ'></Link>
+          </ReactLink>
+        </li>
       </ul>
         <span className="navbar-text">
           <Switch/>

@@ -14,7 +14,7 @@ const FAQ = () => {
     return (
         <div>
         <Navbar/>
-        <div className='container m-5 d-flex justify-content-center'> 
+        <div className='container mt-5 d-flex justify-content-center'> 
         <FAQComp questions={arrayQ}></FAQComp>
         </div>
         <div>

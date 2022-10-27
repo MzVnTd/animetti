@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/random",
     element: <Random />,
-  }
+  },
   {
     path: "/faq",
     element: <FAQ />,

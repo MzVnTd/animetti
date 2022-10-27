@@ -5,6 +5,7 @@ import Title from "../Title/Title"
 import Radio from '../Radio/Radio';
 import LateralCard from '../LateralCard/LateralCard';
 import { useEffect, useState } from 'react';
+import Footer from '../Footer/Footer';
 
 export default function Ranking() {
 
@@ -43,5 +44,8 @@ export default function Ranking() {
     } 
     </div> 
     </div>
+    <div>
+  <Footer className='text-center text-white mt-5' background='#f1f1f1'></Footer>
+  </div>
     </div>);
 }

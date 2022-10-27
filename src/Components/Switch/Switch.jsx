@@ -18,6 +18,7 @@ const Switch = ({
 				type="checkbox"
 				role="switch"
 				id="flexSwitchCheckDefault"
+				defaultChecked
 				checked={checked}
 				disabled={disabled}
 			/>
