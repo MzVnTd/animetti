@@ -1,19 +1,12 @@
 import React from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
 
-const Link = ({
-    className,
-    link,
-    text,
-}) =>{
+const Link = ({text, url}) =>{
 
     return (
-        <a className = {className}
-        href = {link}>
-            {text}
-        </a>
+        <p className='footer-text'>
+            <a href={url}>{text}</a>
+        </p>
         )
-        
-}
 
+}
 export default Link;
