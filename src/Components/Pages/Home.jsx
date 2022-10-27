@@ -5,6 +5,7 @@ import TopAnimes from "../TopAnimes/TopAnimes";
 import PreviewCard from "../PreviewCard/PreviewCard";
 import { useEffect, useState } from 'react';
 import Title from '../Title/Title';
+import Footer from '../Footer/Footer';
 
 
 const Home = () => {
@@ -43,6 +44,9 @@ const Home = () => {
   <div className="container align-items-center">
   <TopAnimes cards={cardArray}></TopAnimes>      
   </div> 
+  </div>
+  <div>
+  <Footer className='text-center text-white mt-5' background='#f1f1f1'></Footer>
   </div>
   </div>
   

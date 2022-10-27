@@ -1,9 +1,8 @@
 import React from 'react';
-import Link from './../Link/Link'
+import Link from '../Link/Link'
 import Icon from '../Icon/Icon';
 import Text from '../Text/Text';
 import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.bundle"
 
 const Footer = ({ className, background }) => {
 
@@ -11,7 +10,7 @@ const Footer = ({ className, background }) => {
     <footer className={className} style={{ backgroundColor: background }}>
 
       <div className="text-center text-dark p-3">
-        <Link url="https://github.com/MzVnTd/animetti" text="Lien vers notre GIT"></Link>
+        <Link href="https://github.com/MzVnTd/animetti" text="Lien vers notre GIT" className='footer-text'></Link>
 
       </div>
 
