@@ -8,6 +8,7 @@ import {
 
 import Home from "./Components/Pages/Home";
 import Ranking from "./Components/Pages/Ranking";
+import FAQ from "./Components/Pages/FAQ"
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/ranking",
     element: <Ranking />,
+  },
+  {
+    path: "/faq",
+    element: <FAQ />,
   },
 ]);
 
