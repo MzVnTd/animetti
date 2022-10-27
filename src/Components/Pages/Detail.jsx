@@ -1,6 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
+import AnimeDetail from "../AnimeDetail/AnimeDetail";
 
-export default function Detail() {
-  return <h2>Detail
-  </h2>;
+
+const Detail = () => {
+	const {id} = useParams();
+
+	const [animeDetail, setAnimeDetail] = useState([]);
+
+	useEffect(() => {
+		getAnimeDetail(id)
+	}, [id]);
+
+	const getAnimeDetail = async (id) => {
+
+		const response = await fetch(`https://api.jikan.moe/v4/anime/`+id+`/full`);
+        const animeDetail = await response.json();
+        setAnimeDetail(animeDetail.data);
+        console.log(animeDetail.data);
+	}
+
+	return (
+		<AnimeDetail details={animeDetail}/>
+	)
 }
+
+export default Detail;

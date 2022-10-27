@@ -1,9 +1,11 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Navbar from "./Components/NavBar";
+import Detail from "./Components/Pages/Detail";
 
 import Home from "./Components/Pages/Home";
 import Ranking from "./Components/Pages/Ranking";
@@ -27,8 +29,17 @@ const router = createBrowserRouter([
     path: "/faq",
     element: <FAQ />,
   },
+  {
+	path: "/anime/:id",
+	element: <Detail/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+	<>
+	<Navbar/>
+	<div className="container">
+		<RouterProvider router={router}/>
+	</div>
+	</>
 );

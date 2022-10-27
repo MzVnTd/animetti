@@ -12,7 +12,7 @@ const Switch = ({
 	return (
 
 		<div className="form-switch form-check">
-			<label className="form-check-label" for="flexSwitchCheckDefault">Darkmode</label>
+			<label className="form-check-label" htmlFor="flexSwitchCheckDefault">Darkmode</label>
 			<input
 				className="form-check-input"
 				type="checkbox"
