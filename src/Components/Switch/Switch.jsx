@@ -4,10 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Switch = ({
 
 	checked = false,
-    disabled = false,
+	disabled = false,
 }
-    
-) => { 
+
+) => {
 
 	return (
 
@@ -24,7 +24,7 @@ const Switch = ({
 			/>
 		</div>
 	)
-    
+
 }
 
 export default Switch;

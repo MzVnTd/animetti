@@ -5,18 +5,18 @@ import "bootstrap/dist/css/bootstrap.css";
 
 
 const FAQ = ({
-    questions = PropTypes.arrayOf(QuestionCard)
+	questions = PropTypes.arrayOf(QuestionCard)
 }) => {
 
-    return (
-        <div
-            className='accordion'
-        >
-            {questions.map(question => {
-                return question;
-            })}
-        </div>
-    );
+	return (
+		<div
+			className='accordion'
+		>
+			{questions.map(question => {
+				return question;
+			})}
+		</div>
+	);
 };
 
 export default FAQ;

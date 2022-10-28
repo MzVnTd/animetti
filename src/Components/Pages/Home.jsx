@@ -5,6 +5,7 @@ import PreviewCard from "../PreviewCard/PreviewCard";
 import { useEffect, useState } from 'react';
 import Title from '../Title/Title';
 import Footer from '../Footer/Footer';
+import Navbar from '../NavBar';
 
 
 const Home = () => {
@@ -24,40 +25,29 @@ const Home = () => {
 
 	const cardArray = new Array(3);
 
-  return (
-  <div>
-  <Navbar/>
-  <div className="mt-5">
-    <Title text={"TOP CURRENT ANIMES"} className={'text-uppercase text-center'}></Title>
-  </div>
-  <div className='container align-items-center mt-5'>
-  <div className="container align-items-center">
-  <TopAnimes cards={cardArray}></TopAnimes>      
-  </div> 
-  </div>
-  <div>
-  <Footer className='text-center text-white mt-5' background='#f1f1f1'></Footer>
-  </div>
-  </div>
-  
-  )
-}
-
-	console.log(cardArray);
+	animeRecs.forEach(anime => {
+		return (
+			cardArray.push(<PreviewCard title={anime.title} imageUrl={anime.images.jpg.large_image_url} small={true} link={anime.trailer.url}></PreviewCard>)
+		)
+	});
 
 	return (
-		<>
+		<div>
+			<Navbar />
 			<div className="mt-5">
-				<Title text={"TOP CURRENT ANIMES"} className={'text-uppercase text-center'} />
+				<Title text={"TOP CURRENT ANIMES"} className={'text-uppercase text-center'}></Title>
 			</div>
 			<div className='container align-items-center mt-5'>
 				<div className="container align-items-center">
-					<TopAnimes cards={cardArray} />
+					<TopAnimes cards={cardArray}></TopAnimes>
 				</div>
 			</div>
-		</>
+			<div>
+				<Footer className='text-center text-white mt-5' background='#f1f1f1'></Footer>
+			</div>
+		</div>
+
 	)
 }
-
 
 export default Home;

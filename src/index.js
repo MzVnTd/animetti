@@ -1,10 +1,9 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import {
-  createBrowserRouter,
-  RouterProvider,
+	createBrowserRouter,
+	RouterProvider,
 } from "react-router-dom";
-import Navbar from "./Components/NavBar";
 import Detail from "./Components/Pages/Detail";
 
 import Home from "./Components/Pages/Home";
@@ -13,33 +12,30 @@ import Random from "./Components/Pages/Random";
 import FAQ from "./Components/Pages/FAQ"
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/ranking",
-    element: <Ranking />,
-  },
-  {
-    path: "/random",
-    element: <Random />,
-  },
-  {
-    path: "/faq",
-    element: <FAQ />,
-  },
-  {
-	path: "/anime/:id",
-	element: <Detail/>
-  }
+	{
+		path: "/",
+		element: <Home />,
+	},
+	{
+		path: "/ranking",
+		element: <Ranking />,
+	},
+	{
+		path: "/random",
+		element: <Random />,
+	},
+	{
+		path: "/faq",
+		element: <FAQ />,
+	},
+	{
+		path: "/anime/:id",
+		element: <Detail />
+	}
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<>
-	<Navbar/>
 	<div className="container">
-		<RouterProvider router={router}/>
+		<RouterProvider router={router} />
 	</div>
-	</>
 );
