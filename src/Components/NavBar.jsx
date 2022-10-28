@@ -35,9 +35,6 @@ const Navbar = () => {
 							</ReactLink>
 						</li>
 					</ul>
-					<span className="navbar-text">
-						<Switch />
-					</span>
 				</div>
 
 			</div>
