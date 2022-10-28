@@ -23,7 +23,9 @@ const Detail = () => {
 	return (
 		<>
 			<Navbar />
-			<AnimeDetail details={animeDetail} />
+			<div className='container mt-5'>
+				<AnimeDetail details={animeDetail} />
+			</div>
 			<Footer className='text-center text-white mt-5' background='#f1f1f1' />
 		</>
 	)
