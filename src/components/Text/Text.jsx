@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Text = ({text}) =>{
+const Text = ({ text }) => {
 
-    return (
-        <p >
-           {text}
-        </p>
-        )
-        
+	return (
+		<p >
+			{text}
+		</p>
+	)
+
 }
 export default Text;

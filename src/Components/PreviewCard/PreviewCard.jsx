@@ -7,7 +7,8 @@ const PreviewCard = ({
 	imageUrl,
 	small = true,
 	title,
-	link
+	link,
+	key
 }) => {
 	return (
 		<>

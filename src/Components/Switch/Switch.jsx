@@ -4,27 +4,26 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Switch = ({
 
 	checked = false,
-    disabled = false,
+	disabled = false,
 }
-    
-) => { 
+
+) => {
 
 	return (
 
 		<div className="form-switch form-check">
-			<label className="form-check-label" for="flexSwitchCheckDefault">Darkmode</label>
+			<label className="form-check-label" htmlFor="flexSwitchCheckDefault">Darkmode</label>
 			<input
 				className="form-check-input"
 				type="checkbox"
 				role="switch"
 				id="flexSwitchCheckDefault"
-				defaultChecked
-				checked={checked}
+				defaultChecked={checked}
 				disabled={disabled}
 			/>
 		</div>
 	)
-    
+
 }
 
 export default Switch;

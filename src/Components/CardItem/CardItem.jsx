@@ -8,7 +8,7 @@ const CardItem = ({
 }) => {
 	return (
 		<p className="card-text">
-			{small? <small className="text-muted">{item + " - " + value}</small> : item + " - " + value}
+			{small ? <small className="text-muted">{item + " - " + value}</small> : item + " - " + value}
 		</p>
 	);
 };

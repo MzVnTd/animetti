@@ -9,14 +9,14 @@ const Button = ({
 	return (
 		<a href={link}>
 			<button
-			type="button"
-			className="btn btn-primary"
-			onClick={onClick}
-		>
-			{text}
-		</button>
+				type="button"
+				className="btn btn-primary"
+				onClick={onClick}
+			>
+				{text}
+			</button>
 		</a>
-		
+
 	);
 };
 
