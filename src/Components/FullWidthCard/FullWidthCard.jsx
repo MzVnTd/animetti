@@ -11,7 +11,7 @@ const FullWidthCard = ({
 	rating,
 	sypnosys,
 	status,
-	link
+	link=null
 
 }) => {
 	return (
@@ -29,7 +29,7 @@ const FullWidthCard = ({
 				<CardText text={sypnosys}></CardText>
 			</div>
 			<div className="card-body d-grid gap-2 mt-4 mb-4">
-				<Button link={link} text='WATCH TRAILER NOW'></Button>
+				<Button link={link} text='WATCH TRAILER NOW' disabled={link===null ? true : false}></Button>
 			</div>
 		</div>
 	);

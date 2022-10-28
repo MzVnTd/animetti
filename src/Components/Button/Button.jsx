@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.css";
 const Button = ({
 	link,
 	text,
-	onClick
+	onClick,
+	disabled=false
 }) => {
 	return (
 		<a href={link}>
@@ -12,6 +13,7 @@ const Button = ({
 				type="button"
 				className="btn btn-primary"
 				onClick={onClick}
+				disabled={disabled}
 			>
 				{text}
 			</button>

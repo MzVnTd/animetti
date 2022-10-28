@@ -28,7 +28,7 @@ const PreviewCard = ({
 					alt=""
 				/>
 				<div className="d-grid gap-2 mt-4 mb-4">
-					<Button text='WATCH TRAILER NOW' link={link}></Button>
+					<Button text='WATCH TRAILER NOW' link={link} disabled={link===null ? true : false}></Button>
 				</div>
 			</div>
 		</>
