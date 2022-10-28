@@ -8,17 +8,17 @@ const Radio = (
 ) => {
 	return (
 		<>
-			<div class="form-check form-check-inline d-flex align-items-center">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="bypopularity" onChange={onChange} defaultChecked />
-				<label class="form-check-label" for="inlineRadio1">by Popularity</label>
+			<div className="form-check form-check-inline d-flex align-items-center">
+				<input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="bypopularity" onChange={onChange} defaultChecked />
+				<label className="form-check-label" htmlFor="inlineRadio1">by Popularity</label>
 			</div>
-			<div class="form-check form-check-inline d-flex align-items-center">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="favorite" onChange={onChange} />
-				<label class="form-check-label" for="inlineRadio2">by Favorites</label>
+			<div className="form-check form-check-inline d-flex align-items-center">
+				<input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="favorite" onChange={onChange} />
+				<label className="form-check-label" htmlFor="inlineRadio2">by Favorites</label>
 			</div>
-			<div class="form-check form-check-inline d-flex align-items-center">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="airing" onChange={onChange} />
-				<label class="form-check-label" for="inlineRadio3">by Airing</label>
+			<div className="form-check form-check-inline d-flex align-items-center">
+				<input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="airing" onChange={onChange} />
+				<label className="form-check-label" htmlFor="inlineRadio3">by Airing</label>
 			</div>
 
 		</>

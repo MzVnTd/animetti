@@ -35,7 +35,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<div className="container">
+	<div className="container-fluid">
 		<RouterProvider router={router} />
 	</div>
 );

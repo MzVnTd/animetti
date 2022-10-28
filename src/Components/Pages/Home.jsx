@@ -27,7 +27,7 @@ const Home = () => {
 
 	animeRecs.forEach(anime => {
 		return (
-			cardArray.push(<PreviewCard title={anime.title} imageUrl={anime.images.jpg.large_image_url} small={true} link={anime.trailer.url}></PreviewCard>)
+			cardArray.push(<PreviewCard key={anime.mal_id} title={anime.title} imageUrl={anime.images.jpg.large_image_url} small={true} link={anime.trailer.url}></PreviewCard>)
 		)
 	});
 

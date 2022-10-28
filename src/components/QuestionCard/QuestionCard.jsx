@@ -13,9 +13,9 @@ const QuestionCard = ({ question, answer }) => {
 
 		<>
 			<div>
-				<div class="accordion">
-					<div class="accordion-item">
-						<h2 class="accordion-header" id={idHeader}>
+				<div className="accordion">
+					<div className="accordion-item">
+						<h2 className="accordion-header" id={idHeader}>
 							<button
 								className="accordion-button" type="button"
 								data-bs-toggle="collapse"
@@ -25,8 +25,8 @@ const QuestionCard = ({ question, answer }) => {
 								<p>{question}</p>
 							</button>
 						</h2>
-						<div id={idBody} class="accordion-collapse collapse show" aria-labelledby={idHeader}>
-							<div class="accordion-body">
+						<div id={idBody} className="accordion-collapse collapse show" aria-labelledby={idHeader}>
+							<div className="accordion-body">
 								{answer}
 							</div>
 						</div>

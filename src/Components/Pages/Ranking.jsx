@@ -22,7 +22,6 @@ export default function Ranking() {
 		const response = await fetch(`https://api.jikan.moe/v4/top/anime?filter=${selectedFilter}&limit=15`);
 		const animeRecs = await response.json();
 		setAnimes(animeRecs.data);
-		console.log(animeRecs.data)
 	}
 
 
@@ -37,7 +36,7 @@ export default function Ranking() {
 				animes && animes.map(
 					anime => {
 						return (
-							<LateralCard title={anime.title} imageUrl={anime.images.jpg.large_image_url} rank={anime.rank} ratings={anime.score} animeId={anime.mal_id}></LateralCard>
+							<LateralCard key={anime.mal_id} title={anime.title} imageUrl={anime.images.jpg.large_image_url} rank={anime.rank} ratings={anime.score} animeId={anime.mal_id}></LateralCard>
 						)
 					}
 				)
