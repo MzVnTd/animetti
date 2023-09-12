@@ -2,11 +2,23 @@ import React from 'react';
 import Heading from './Heading/Heading';
 import Link from './Link/Link';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link as ReactLink } from 'react-router-dom';
+import {Link as ReactLink, useNavigate} from 'react-router-dom';
 import auth from '..';
+import Button from "./Button/Button";
+import {signOut} from 'firebase/auth';
+import "./vincent.css"
 
 const Navbar = () => {
 	const user = auth.currentUser;
+
+
+	const logOut = async () => {
+		try {
+			await signOut(auth)
+		} catch {
+			alert("For some reasons we can't deconnect, please check your internet connexion and retry.")
+		}
+	}
 
 	return (
 		<nav className="navbar navbar-expand-lg bg-light">
@@ -37,26 +49,28 @@ const Navbar = () => {
 							</ReactLink>
 						</li>
 						<li className="nav-item">
-							{
-							user ?
-							<>
-							<p>{user.email}</p>
-							<ReactLink to={'/faq'}>
-								<Link className={"nav-link"} text='Logout'></Link>
-							</ReactLink>
-							</>
-							:
-							<ReactLink to={'/login'}>
-								<Link className={"nav-link"} text='Login'></Link>
-							</ReactLink>
-							}
-							<ReactLink to={'/faq'}>
-								<Link className={"nav-link"} text=''></Link>
-							</ReactLink>
+
 						</li>
 					</ul>
 				</div>
 
+			</div>
+			<div class="log">
+				{
+					user ?
+						<>
+						<div class="info1">
+							<p class="info-user">{user.displayName}</p>
+						</div>
+							<div class="info2">
+							<Button text="Logout" onClick={logOut} link={'/'}/>
+							</div>
+						</>
+						:
+						<ReactLink to={'/login'}>
+							<Link className={"nav-link"} text='Login'></Link>
+						</ReactLink>
+				}
 			</div>
 		</nav>
 	);
