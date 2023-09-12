@@ -36,8 +36,6 @@ const Random = () => {
                   ? ""
                   : randAnime.images.jpg.large_image_url
               }
-              genre=""
-              rating={randAnime.score}
               sypnosys={randAnime.synopsis}
               status={randAnime.status}
               link={

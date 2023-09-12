@@ -23,6 +23,7 @@ export default function Ranking() {
 		setAnimes(page === 1 ? animeRecs.data : current => [...current , ...animeRecs.data]);
 	}
 
+
 	return (<div>
 		<Navbar />
 		<div className="container mt-5 ml-5 d-flex justify-content-between">
@@ -34,7 +35,7 @@ export default function Ranking() {
 				animes && animes.map(
 					anime => {
 						return (
-							<LateralCard key={anime.mal_id} title={anime.title} imageUrl={anime.images.jpg.large_image_url} rank={anime.rank} ratings={anime.score} animeId={anime.mal_id}></LateralCard>
+							<LateralCard key={anime.mal_id} title={anime.title} imageUrl={anime.images.jpg.large_image_url} rank={anime.rank} animeId={anime.mal_id}></LateralCard>
 						)
 					}
 				)

@@ -1,13 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import DetailElement from "../DetailElement/DetailElement";
+import RatingBox from "../RatingStars/RatingBox";
 
 const AnimeDetail = ({
-	details
+	details,
+	value,
+	onRatingChange,
+	userRating,
 }) => {
+
 	if (details === null) {
 		return <h1 className="display-5">Loading...</h1>;
 	}
+
 	return (
 		<div className="card">
 			<div className="row g-0">
@@ -23,8 +29,8 @@ const AnimeDetail = ({
 					<div className="row">
 						<DetailElement index="Year" value={details.year} />
 						<DetailElement index="Synopsis" value={details.synopsis} />
-						<DetailElement index="Score" value={details.score} />
-						<DetailElement index="Rank" value={details.rank} />
+						<DetailElement index="User rating" value={value} />
+						<RatingBox value={userRating} onRatingChange={onRatingChange}/>
 						<DetailElement index="Popularity" value={details.popularity} />
 						<DetailElement index="Favorites" value={details.favorites} />
 						<DetailElement index="Scored by" value={details.scored_by} />

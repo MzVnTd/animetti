@@ -3,14 +3,15 @@ import "bootstrap/dist/css/bootstrap.css";
 import CardTitle from "../CardTitle/CardTitle";
 import CardText from "../CardText/CardText";
 import Button from "../Button/Button";
+import RatingBox from "../RatingStars/RatingBox";
 
 const FullWidthCard = ({
 	title,
 	imageUrl,
 	genre,
-	rating,
 	sypnosys,
 	status,
+	value,
 	link=null
 
 }) => {
@@ -23,7 +24,8 @@ const FullWidthCard = ({
 			<ul className="list-group list-group-flush align-items-center">
 				<li className="list-group-item">{genre}</li>
 				<li className="list-group-item">{status}</li>
-				<li className="list-group-item">{rating}</li>
+				<RatingBox value={value}></RatingBox>
+
 			</ul>
 			<div className="card-body">
 				<CardText text={sypnosys}></CardText>
