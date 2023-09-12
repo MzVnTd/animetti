@@ -11,7 +11,7 @@ import Button from '../Button/Button';
 export default function Ranking() {
 	const [animes, setAnimes] = useState([]);
 	const [page, setPage] = useState(1);
-	const [filter, setFilter] = useState('');
+	const [filter, setFilter] = useState('bypopularity');
 
 	useEffect(() => {
 		fetchAnimes();

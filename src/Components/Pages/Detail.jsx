@@ -41,16 +41,21 @@ const Detail = () => {
 		getRatings(db,id)
 	}, [id]);
 
-		async function getRatings() {
+
+	const [scoredBy, setScoredBy] = useState(0);
+
+	async function getRatings() {
 			const docRef = onSnapshot(doc(db, "show", id), (doc) => {
 				console.log("Current data: ", doc.data())
 				const data = doc.data()
 				const sum = data.ratings.reduce((total, grade) => total + grade, 0);
 				const average = sum / data.ratings.length;
-				console.log(average)
+				console.log(average);
 				setRating(average);
+				setScoredBy(data.ratings.length);
 			})
 		}
+
 
 		const [userRating, setUserRating] = useState(null);
 
@@ -81,7 +86,7 @@ const Detail = () => {
 			<>
 				<Navbar/>
 				<div className='container mt-5'>
-					<AnimeDetail details={animeDetail} value={rating} onRatingChange={handleRatingChange}/>
+					<AnimeDetail details={animeDetail} value={rating} onRatingChange={handleRatingChange} scoredBy ={scoredBy}/>
 				</div>
 				<Footer className='text-center text-white mt-5' background='#f1f1f1'/>
 			</>

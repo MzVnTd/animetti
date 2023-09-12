@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 const RatingBox = ({ value, onRatingChange }) => {
     return (
         <Box>
-            <Typography component="legend">User Rating</Typography>
+            <Typography component="legend">Your Rating</Typography>
             <Rating
                 name="simple-controlled"
                 value={value}

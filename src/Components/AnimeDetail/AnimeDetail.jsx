@@ -8,6 +8,7 @@ const AnimeDetail = ({
 	value,
 	onRatingChange,
 	userRating,
+	scoredBy
 }) => {
 
 	if (details === null) {
@@ -31,9 +32,7 @@ const AnimeDetail = ({
 						<DetailElement index="Synopsis" value={details.synopsis} />
 						<DetailElement index="User rating" value={value} />
 						<RatingBox value={userRating} onRatingChange={onRatingChange}/>
-						<DetailElement index="Popularity" value={details.popularity} />
-						<DetailElement index="Favorites" value={details.favorites} />
-						<DetailElement index="Scored by" value={details.scored_by} />
+						<DetailElement index="Scored by" value={scoredBy} />
 						<DetailElement index="Type" value={details.type} />
 						<DetailElement index="Source" value={details.source} />
 						<DetailElement index="Episodes" value={details.episodes} />
