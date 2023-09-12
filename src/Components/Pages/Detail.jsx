@@ -48,11 +48,12 @@ const Detail = () => {
 			const docRef = onSnapshot(doc(db, "show", id), (doc) => {
 				console.log("Current data: ", doc.data())
 				const data = doc.data()
-				const sum = data.ratings.reduce((total, grade) => total + grade, 0);
-				const average = sum / data.ratings.length;
+				const total = (data.ratings[0]*1 + data.ratings[1]*2 + data.ratings[2]*3 + data.ratings[3]*4 + data.ratings[4]*5);
+				const sum = (data.ratings[0] + data.ratings[1] + data.ratings[2] + data.ratings[3] + data.ratings[4])
+				const average = total / sum;
 				console.log(average);
 				setRating(average);
-				setScoredBy(data.ratings.length);
+				setScoredBy(sum);
 			})
 		}
 
@@ -60,25 +61,37 @@ const Detail = () => {
 		const [userRating, setUserRating] = useState(null);
 
 		async function createShow(id, newValue) {
+
 			const docData = {
-				ratings: {newValue}
+				ratings: [0, 0, 0, 0, 0]
 			}
+			if (newValue === 1) {docData.ratings[0]++}
+			if (newValue === 2) {docData.ratings[1]++}
+			if (newValue === 3) {docData.ratings[2]++}
+			if (newValue === 4) {docData.ratings[3]++}
+			if (newValue === 5) {docData.ratings[4]++}
+
 			await setDoc(doc(db, "show", id), docData);
 		}
 
 		const handleRatingChange = async (newValue) => {
 			setUserRating(newValue);
-
 			const docRef = doc(db, "show", id);
 			const docSnap = await getDoc(docRef)
 			if (!docSnap.exists()) {
 				createShow(id, newValue)
 			}
-			const updateData = {
-				ratings: arrayUnion(newValue)
-			};
-			updateDoc(docRef, updateData)
-				.then(console.log(newValue))
+			const data = docSnap.data()
+			if (newValue === 1) {data.ratings[0]++}
+			if (newValue === 2) {data.ratings[1]++}
+			if (newValue === 3) {data.ratings[2]++}
+			if (newValue === 4) {data.ratings[3]++}
+			if (newValue === 5) {data.ratings[4]++}
+			console.log(newValue)
+
+			updateDoc(docRef, data)
+				.then(console.log(data))
+
 
 		};
 
