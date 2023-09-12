@@ -10,6 +10,13 @@ import Home from "./Components/Pages/Home";
 import Ranking from "./Components/Pages/Ranking";
 import Random from "./Components/Pages/Random";
 import FAQ from "./Components/Pages/FAQ"
+import Login from "./Components/Pages/Login";
+import { getAuth } from "firebase/auth";
+import app from "./firebaseApp";
+
+const auth = getAuth(app);
+
+export default auth;
 
 const router = createBrowserRouter([
 	{
@@ -31,6 +38,10 @@ const router = createBrowserRouter([
 	{
 		path: "/anime/:id",
 		element: <Detail />
+	},
+	{
+		path: "/login",
+		element: <Login />
 	}
 ]);
 

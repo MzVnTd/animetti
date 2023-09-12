@@ -1,11 +1,13 @@
 import React from 'react';
 import Heading from './Heading/Heading';
 import Link from './Link/Link';
-import Switch from './Switch/Switch';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link as ReactLink } from 'react-router-dom';
+import auth from '..';
 
 const Navbar = () => {
+	const user = auth.currentUser;
+
 	return (
 		<nav className="navbar navbar-expand-lg bg-light">
 			<div className="container-fluid">
@@ -32,6 +34,24 @@ const Navbar = () => {
 						<li className="nav-item">
 							<ReactLink to={'/faq'}>
 								<Link className={"nav-link"} text='FAQ'></Link>
+							</ReactLink>
+						</li>
+						<li className="nav-item">
+							{
+							user ?
+							<>
+							<p>{user.email}</p>
+							<ReactLink to={'/faq'}>
+								<Link className={"nav-link"} text='Logout'></Link>
+							</ReactLink>
+							</>
+							:
+							<ReactLink to={'/login'}>
+								<Link className={"nav-link"} text='Login'></Link>
+							</ReactLink>
+							}
+							<ReactLink to={'/faq'}>
+								<Link className={"nav-link"} text=''></Link>
 							</ReactLink>
 						</li>
 					</ul>
