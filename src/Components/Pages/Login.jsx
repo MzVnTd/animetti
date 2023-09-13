@@ -18,7 +18,7 @@ const Login = () => {
             callbacks: {
                 signInSuccessWithAuthResult: function(authResult, redirectUrl) {
                     // Action if the user is authenticated successfully
-					navigate("/");
+					navigate("/ranking");
                 },
                 uiShown: function() {
                     // This is what should happen when the form is full loaded. In this example, I hide the loader element.

@@ -9,8 +9,6 @@ import {signOut} from 'firebase/auth';
 import "./vincent.css"
 
 const Navbar = () => {
-	const user = auth.currentUser;
-
 
 	const logOut = async () => {
 		try {
@@ -19,6 +17,8 @@ const Navbar = () => {
 			alert("For some reasons we can't deconnect, please check your internet connexion and retry.")
 		}
 	}
+
+	const user = auth.currentUser;
 
 	return (
 		<nav className="navbar navbar-expand-lg bg-light">
