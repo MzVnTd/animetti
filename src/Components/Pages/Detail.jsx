@@ -4,7 +4,10 @@ import AnimeDetail from "../AnimeDetail/AnimeDetail";
 import Navbar from '../NavBar';
 import Footer from '../Footer/Footer';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, getDoc, doc,updateDoc, arrayUnion, setDoc, onSnapshot } from 'firebase/firestore';
+import { getFirestore, getDoc, doc,updateDoc, setDoc, onSnapshot, collection, getDocs, addDoc } from 'firebase/firestore';
+import CardText from "../CardText/CardText";
+import Button from "../Button/Button";
+import auth from "../../index";
 
 const Detail = () => {
 
@@ -20,6 +23,7 @@ const Detail = () => {
 	const app = initializeApp(firebaseConfig);
 	const db = getFirestore(app);
 	const {id} = useParams();
+	const user = auth.currentUser;
 
 
 	const [animeDetail, setAnimeDetail] = useState(null);
@@ -55,6 +59,7 @@ const Detail = () => {
 				setRating(average);
 				setScoredBy(sum);
 			})
+
 		}
 
 
@@ -75,31 +80,75 @@ const Detail = () => {
 		}
 
 		const handleRatingChange = async (newValue) => {
-			setUserRating(newValue);
-			const docRef = doc(db, "show", id);
-			const docSnap = await getDoc(docRef)
-			if (!docSnap.exists()) {
-				createShow(id, newValue)
+			if (user) {
+				setUserRating(newValue);
+				const docRef = doc(db, "show", id);
+				const docSnap = await getDoc(docRef)
+				if (!docSnap.exists()) {
+					createShow(id, newValue)
+				}
+				const data = docSnap.data()
+				if (newValue === 1) {data.ratings[0]++}
+				if (newValue === 2) {data.ratings[1]++}
+				if (newValue === 3) {data.ratings[2]++}
+				if (newValue === 4) {data.ratings[3]++}
+				if (newValue === 5) {data.ratings[4]++}
+				console.log(newValue)
+
+				updateDoc(docRef, data)
+					.then(console.log(data))
 			}
-			const data = docSnap.data()
-			if (newValue === 1) {data.ratings[0]++}
-			if (newValue === 2) {data.ratings[1]++}
-			if (newValue === 3) {data.ratings[2]++}
-			if (newValue === 4) {data.ratings[3]++}
-			if (newValue === 5) {data.ratings[4]++}
-			console.log(newValue)
-
-			updateDoc(docRef, data)
-				.then(console.log(data))
-
+			else {
+				alert("You need to log in to rate");
+			}
 
 		};
+
+	const [comments, setComments] = useState([]);
+
+	useEffect(() => {
+		getComments();
+	}, [id])
+
+	async function getComments() {
+		const commentsCollectionRef = collection(db, "show", id, "comments");
+		const collectionRef = onSnapshot(commentsCollectionRef, (querySnapshot) => {
+			const newComments = querySnapshot.docs.map((doc) => doc.data());
+			setComments(newComments);
+			console.log(newComments);
+		})
+	}
+
+	const [commentText, setCommentText] = useState("");
+
+	const handleTextChange = (event) => {
+		setCommentText(event.target.value);
+	};
+
+	const handleSendClick = async () => {
+
+		if (user) {
+			console.log("Comment Text:", commentText);
+			const commentsCollectionRef = collection(db, "show", id, "comments");
+			const newCommentData = {
+				comment: commentText,
+				username: user.email,
+			};
+
+			const newCommentRef = await addDoc(commentsCollectionRef, newCommentData);
+			setCommentText("");
+		} else {
+			alert("You need to log in to comment");
+		}
+	};
+
+
 
 		return (
 			<>
 				<Navbar/>
 				<div className='container mt-5'>
-					<AnimeDetail details={animeDetail} value={rating} onRatingChange={handleRatingChange} scoredBy ={scoredBy}/>
+					<AnimeDetail details={animeDetail} value={rating} onRatingChange={handleRatingChange} scoredBy ={scoredBy} comments = {comments} handleTextChange={handleTextChange} handleSendClick={handleSendClick}/>
 				</div>
 				<Footer className='text-center text-white mt-5' background='#f1f1f1'/>
 			</>

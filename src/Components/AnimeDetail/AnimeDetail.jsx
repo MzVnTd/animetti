@@ -2,13 +2,19 @@ import React, {useState} from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import DetailElement from "../DetailElement/DetailElement";
 import RatingBox from "../RatingStars/RatingBox";
+import CardText from "../CardText/CardText";
+import TextArea from "../TextArea/TextArea";
 
 const AnimeDetail = ({
 	details,
 	value,
 	onRatingChange,
 	userRating,
-	scoredBy
+	scoredBy,
+	comments,
+	newComment,
+	handleSendClick,
+	handleTextChange
 }) => {
 
 	if (details === null) {
@@ -37,7 +43,12 @@ const AnimeDetail = ({
 						<DetailElement index="Source" value={details.source} />
 						<DetailElement index="Episodes" value={details.episodes} />
 						<DetailElement index="Status" value={details.status} />
-						<iframe height="400vh" title={details.title} src={details.trailer.embed_url} frameBorder="0" allowFullScreen />
+						<TextArea text={newComment} handleSendClick={handleSendClick} handleTextChange={handleTextChange}/>
+						{
+							comments.map((comment, index) => (
+								<CardText username={comment.username} text={comment.comment}/>
+							))
+						}
 					</div>
 				</div>
 			</div>
