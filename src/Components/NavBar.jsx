@@ -38,7 +38,7 @@ const Navbar = () => {
 								<Link className={"nav-link"} text='Ranking'></Link>
 							</ReactLink>
 						</li>
-						<li className="nav-item">
+						{/*<li className="nav-item">
 							<ReactLink to={'/random'}>
 								<Link className={"nav-link"} text='RandomGenerator'></Link>
 							</ReactLink>
@@ -47,7 +47,7 @@ const Navbar = () => {
 							<ReactLink to={'/faq'}>
 								<Link className={"nav-link"} text='FAQ'></Link>
 							</ReactLink>
-						</li>
+						</li>*/}
 						<li className="nav-item">
 
 						</li>
