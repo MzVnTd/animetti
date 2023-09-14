@@ -126,17 +126,20 @@ const Detail = () => {
 	};
 
 	const handleSendClick = async () => {
-
 		if (user) {
-			console.log("Comment Text:", commentText);
-			const commentsCollectionRef = collection(db, "show", id, "comments");
-			const newCommentData = {
-				comment: commentText,
-				username: user.email,
-			};
+			if (commentText.trim() !== "") { // Vérifiez que le texte du commentaire n'est pas vide ou composé uniquement d'espaces
+				console.log("Comment Text:", commentText);
+				const commentsCollectionRef = collection(db, "show", id, "comments");
+				const newCommentData = {
+					comment: commentText,
+					username: user.email,
+				};
 
-			const newCommentRef = await addDoc(commentsCollectionRef, newCommentData);
-			setCommentText("");
+				const newCommentRef = await addDoc(commentsCollectionRef, newCommentData);
+				setCommentText("");
+			} else {
+				alert("Comment field cannot be empty");
+			}
 		} else {
 			alert("You need to log in to comment");
 		}
