@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Heading from './Heading/Heading';
 import Link from './Link/Link';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -7,8 +7,25 @@ import auth from '..';
 import Button from "./Button/Button";
 import {signOut} from 'firebase/auth';
 import "./vincent.css"
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const Navbar = () => {
+
+	const[user, setUser] = useState(null);
+
+	useEffect(() => {
+		const auth = getAuth();
+		const unsubscribe = onAuthStateChanged(auth, (user) => {
+		  if (user) {
+			setUser(user);
+		  }
+		});
+	
+		// Cleanup subscription on unmount
+		return () => {
+		  unsubscribe();
+		};
+	  }, []);
 
 	const logOut = async () => {
 		try {
@@ -17,8 +34,6 @@ const Navbar = () => {
 			alert("For some reasons we can't deconnect, please check your internet connexion and retry.")
 		}
 	}
-
-	const user = auth.currentUser;
 
 	return (
 		<nav className="navbar navbar-expand-lg bg-light">

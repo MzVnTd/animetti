@@ -18,7 +18,6 @@ const Random = () => {
     const response = await fetch(`https://api.jikan.moe/v4/random/anime`);
     const anime = await response.json();
     setRandAnime(anime.data);
-    console.log(anime.data);
   };
 
   return (
