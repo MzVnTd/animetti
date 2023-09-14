@@ -75,7 +75,7 @@ const Navbar = () => {
 					user ?
 						<>
 						<div class="info1">
-							<p class="info-user">{user.displayName}</p>
+							<p class="info-user">{user.displayName ? user.displayName : user.email}</p>
 						</div>
 							<div class="info2">
 							<Button text="Logout" onClick={logOut} link={'/'}/>
