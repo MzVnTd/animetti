@@ -11,7 +11,7 @@ import Button from '../Button/Button';
 export default function Ranking() {
 	const [animes, setAnimes] = useState([]);
 	const [page, setPage] = useState(1);
-	const [filter, setFilter] = useState('');
+	const [filter, setFilter] = useState('bypopularity');
 
 	useEffect(() => {
 		fetchAnimes();
@@ -22,6 +22,7 @@ export default function Ranking() {
 		const animeRecs = await response.json();
 		setAnimes(page === 1 ? animeRecs.data : current => [...current , ...animeRecs.data]);
 	}
+
 
 	return (<div>
 		<Navbar />
@@ -34,7 +35,7 @@ export default function Ranking() {
 				animes && animes.map(
 					anime => {
 						return (
-							<LateralCard key={anime.mal_id} title={anime.title} imageUrl={anime.images.jpg.large_image_url} rank={anime.rank} ratings={anime.score} animeId={anime.mal_id}></LateralCard>
+							<LateralCard key={anime.mal_id} title={anime.title} imageUrl={anime.images.jpg.large_image_url} rank={anime.rank} animeId={anime.mal_id}></LateralCard>
 						)
 					}
 				)

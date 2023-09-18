@@ -27,7 +27,7 @@ const Footer = ({ className, background }) => {
 			</div>
 
 			<div className="text-center text-dark p-3">
-				<Text text="Vincent Merwane Teya"></Text>
+				<Text text="Vincent Merwane Teya Mehdi"></Text>
 			</div>
 
 		</footer>

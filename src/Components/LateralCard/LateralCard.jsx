@@ -22,8 +22,7 @@ const LateralCard = ({
 					<div className="col-md-8">
 						<div className="card-body">
 							<CardTitle title={title} />
-							<CardItem item="Ranking" value={'#' + rank} />
-							<CardItem item="Ratings" value={ratings} small={true} />
+							<CardItem item="See more" value={'Check for rating below'} />
 							<Link to={"/anime/" + animeId}>
 								<Button text="Read more..." />
 							</Link>

@@ -18,7 +18,6 @@ const Random = () => {
     const response = await fetch(`https://api.jikan.moe/v4/random/anime`);
     const anime = await response.json();
     setRandAnime(anime.data);
-    console.log(anime.data);
   };
 
   return (
@@ -36,8 +35,6 @@ const Random = () => {
                   ? ""
                   : randAnime.images.jpg.large_image_url
               }
-              genre=""
-              rating={randAnime.score}
               sypnosys={randAnime.synopsis}
               status={randAnime.status}
               link={
