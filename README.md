@@ -1,3 +1,5 @@
+# You can access the deployed version of the webapp through this [URL](https://animetti-2zg5lfbhl-mzvntdmc.vercel.app/).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
